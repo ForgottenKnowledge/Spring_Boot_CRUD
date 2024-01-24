@@ -34,8 +34,8 @@ public class UserController {
         return "redirect:/users";
     }
 
-    @GetMapping("/edit/{id}")
-    public String editUser(@PathVariable("id") Long id, Model model) {
+    @GetMapping("/edit")
+    public String editUser(@RequestParam("id") Long id, Model model) {
         model.addAttribute("user", userService.getUser(id));
         return "usereditor";
     }
@@ -46,8 +46,8 @@ public class UserController {
         return "redirect:/users";
     }
 
-    @GetMapping("/delete/{id}")
-    public String delete(@PathVariable("id") Long id) {
+    @GetMapping("/delete")
+    public String delete(@RequestParam("id") Long id) {
         userService.deleteUser(id);
         return "redirect:/users";
     }

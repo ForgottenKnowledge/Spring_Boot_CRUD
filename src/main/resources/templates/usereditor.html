@@ -4,23 +4,23 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Edit User</title>
+    <title>Редактирование</title>
 </head>
 
 <body>
 
-<h1>Edit User</h1>
+<h1>Редактировать данные пользователя</h1>
 
 <form th:action="@{/edit}" th:object="${user}" method="post">
-    <p><input type="hidden" th:field="*{id}"/></p>
-    <p>First name: <input type="text" th:field="*{firstName}"/></p>
-    <p>Last name: <input type="text" th:field="*{lastName}"/></p>
-    <p>Age: <input type="number" th:field="*{age}"/></p>
-    <p>Phone: <input type="number" th:field="*{phone}"/></p>
-    <p><input type="submit" value="Edit User"/></p>
+    <p><input th:type="hidden" th:field="*{id}"/></p>
+    <p>Имя: <input type="text" th:field="*{name}"/></p>
+    <p>Фамилия: <input type="text" th:field="*{surname}"/></p>
+    <p>Возраст: <input type="number" th:field="*{age}"/></p>
+    <p><input type="submit" value="Подтвердить изменения"/></p>
 </form>
 
-<a th:href="@{/users}">Return</a>
+<br>
+<a th:href="@{/users}">Назад</a>
 
 </body>
 </html>
